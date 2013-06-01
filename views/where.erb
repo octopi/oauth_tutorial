@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Where Am I?</title>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <script src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.css" />
+</head>
+<body style="text-align:center;">
+	<h1>Where Is <%= user_name %>?</h1>
+    <div id="map"></div>
+    <p>Last seen at:</p>
+	<h2><%= venue_name %></h2>
+    <script>
+    // setting up map
+    var map = L.map('map').setView([<%= lat %>, <%= lng %>], 11);
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+        maxZoom: 18
+    }).addTo(map);
+    L.marker([<%= lat %>, <%= lng %>]).addTo(map);
+    </script>
+</body>
+</html>

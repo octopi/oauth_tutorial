@@ -1,0 +1,13 @@
+body {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+p {
+	font-weight: 100;
+}
+
+#map { 
+    height: 480px;
+    width:960px;
+    margin: 0 auto;
+}
